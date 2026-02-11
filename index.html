@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formation IA — Envergure · 11 février 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ocean: #0f4c5c;
+  --coral: #e76f51;
+  --cream: #faf4e6;
+  --ink: #1a1a2e;
+  --gold: #d4a574;
+  --sand: #f5ead6;
+  --pale: #e8f0f2;
+  --ocean-light: #1a6b7a;
+  --coral-soft: #f4a590;
+  --sidebar-w: 280px;
+  --header-h: 80px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+
+body {
+  font-family: 'Figtree', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── HEADER ─── */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--header-h);
+  background: var(--ocean);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  box-shadow: 0 2px 20px rgba(15,76,92,0.3);
+}
+
+.site-header h1 {
+  font-family: 'Young Serif', serif;
+  color: var(--cream);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.site-header h1 span {
+  color: var(--coral-soft);
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  display: block;
+  margin-top: 2px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.header-right {
+  margin-left: auto;
+  color: var(--pale);
+  font-size: 0.85rem;
+  text-align: right;
+  opacity: 0.8;
+}
+
+/* ─── SIDEBAR ─── */
+.sidebar {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  width: var(--sidebar-w);
+  height: calc(100vh - var(--header-h));
+  background: var(--ink);
+  overflow-y: auto;
+  padding: 1.5rem 0;
+  z-index: 90;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ocean) transparent;
+}
+
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--ocean); border-radius: 2px; }
+
+.sidebar .nav-group {
+  padding: 0 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.sidebar .nav-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--coral);
+  padding: 0 0 0.5rem 0;
+  border-bottom: 1px solid rgba(231,111,81,0.2);
+  margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+  display: block;
+  color: rgba(250,244,230,0.6);
+  text-decoration: none;
+  font-size: 0.82rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+  line-height: 1.4;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  color: var(--cream);
+  background: rgba(250,244,230,0.08);
+}
+
+.sidebar a.active {
+  background: rgba(231,111,81,0.15);
+  color: var(--coral-soft);
+  font-weight: 500;
+}
+
+/* ─── MAIN ─── */
+.main {
+  margin-left: var(--sidebar-w);
+  margin-top: var(--header-h);
+  min-height: calc(100vh - var(--header-h));
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: linear-gradient(135deg, var(--ocean) 0%, var(--ocean-light) 50%, #2a8a9a 100%);
+  padding: 4rem 3.5rem 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(231,111,81,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%; left: -10%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(212,165,116,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-content { position: relative; z-index: 1; max-width: 800px; }
+
+.hero h2 {
+  font-family: 'Young Serif', serif;
+  color: var(--cream);
+  font-size: 2.6rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero .subtitle {
+  color: var(--coral-soft);
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-meta .meta-item {
+  background: rgba(250,244,230,0.08);
+  border: 1px solid rgba(250,244,230,0.12);
+  border-radius: 10px;
+  padding: 0.8rem 1.2rem;
+  color: var(--cream);
+  min-width: 160px;
+}
+
+.hero-meta .meta-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+  margin-bottom: 0.2rem;
+}
+
+.hero-meta .meta-value {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* ─── CONTENT AREA ─── */
+.content {
+  max-width: 860px;
+  padding: 3rem 3.5rem 4rem;
+}
+
+/* ─── SECTION ─── */
+.section {
+  margin-bottom: 2.5rem;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 1px 4px rgba(26,26,46,0.06);
+  overflow: hidden;
+  border: 1px solid rgba(26,26,46,0.06);
+  transition: box-shadow 0.3s;
+}
+
+.section:hover {
+  box-shadow: 0 4px 16px rgba(26,26,46,0.08);
+}
+
+.section-header {
+  padding: 1.2rem 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.section-header:hover {
+  background: var(--sand);
+}
+
+.section-number {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: var(--ocean);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.section-header h3 {
+  font-family: 'Young Serif', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--ink);
+  flex: 1;
+}
+
+.section-toggle {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.section.open .section-toggle {
+  transform: rotate(180deg);
+  background: var(--coral);
+}
+
+.section.open .section-toggle svg path { stroke: white; }
+
+.section-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.section.open .section-body {
+  max-height: 5000px;
+}
+
+.section-content {
+  padding: 0.5rem 1.8rem 1.8rem;
+  padding-left: calc(1.8rem + 36px + 1rem);
+}
+
+.section-content p {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.section-content p:last-child { margin-bottom: 0; }
+
+/* ─── SPECIAL BLOCKS ─── */
+.anecdote {
+  background: var(--sand);
+  border-left: 3px solid var(--gold);
+  padding: 1rem 1.2rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1.2rem 0;
+  font-size: 0.92rem;
+}
+
+.anecdote .anecdote-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+
+.takeaway {
+  background: linear-gradient(135deg, rgba(15,76,92,0.04) 0%, rgba(15,76,92,0.08) 100%);
+  border: 1px solid rgba(15,76,92,0.12);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin: 1.2rem 0;
+}
+
+.takeaway .takeaway-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ocean);
+  margin-bottom: 0.3rem;
+}
+
+.tool-tag {
+  display: inline-block;
+  background: var(--ocean);
+  color: var(--cream);
+  padding: 0.15rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin: 0.15rem 0.2rem;
+}
+
+.tool-tag.alt {
+  background: var(--coral);
+}
+
+.tool-tag.gold {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+/* ─── PART DIVIDER ─── */
+.part-divider {
+  padding: 2rem 3.5rem 1rem;
+  max-width: 860px;
+}
+
+.part-divider h2 {
+  font-family: 'Young Serif', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--ocean);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--coral);
+  display: inline-block;
+}
+
+/* ─── PARTICIPANT CARDS ─── */
+.participants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.participant-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(26,26,46,0.06);
+  border: 1px solid rgba(26,26,46,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.participant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26,26,46,0.1);
+}
+
+.card-header {
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-avatar {
+  width: 50px; height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Young Serif', serif;
+  font-size: 1.3rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.card-header .card-info h4 {
+  font-family: 'Young Serif', serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.card-header .card-info .card-role {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 400;
+}
+
+.card-body {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.card-section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ocean);
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.card-body p {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+}
+
+.level-bar {
+  height: 6px;
+  background: var(--pale);
+  border-radius: 3px;
+  margin-top: 0.3rem;
+  overflow: hidden;
+}
+
+.level-bar .fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 1s ease;
+}
+
+/* ─── ACTION PLAN ─── */
+.action-plan {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(26,26,46,0.06);
+  border: 1px solid rgba(26,26,46,0.06);
+}
+
+.action-step {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(26,26,46,0.06);
+}
+
+.action-step:last-child { border-bottom: none; }
+
+.step-icon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
+
+.action-step h4 {
+  font-family: 'Young Serif', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin-bottom: 0.3rem;
+}
+
+.action-step p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ─── EXEC SUMMARY ─── */
+.exec-summary {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 8px rgba(26,26,46,0.06);
+  border: 1px solid rgba(26,26,46,0.06);
+}
+
+.exec-summary h3 {
+  font-family: 'Young Serif', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: var(--ocean);
+}
+
+.exec-summary p { color: #333; margin-bottom: 1rem; }
+.exec-summary p:last-child { margin-bottom: 0; }
+
+.stats-row {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.stat {
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+  padding: 1rem;
+  background: var(--sand);
+  border-radius: 10px;
+}
+
+.stat .stat-num {
+  font-family: 'Young Serif', serif;
+  font-size: 2rem;
+  color: var(--ocean);
+}
+
+.stat .stat-label {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 0.2rem;
+}
+
+/* ─── FOOTER ─── */
+.site-footer {
+  margin-left: var(--sidebar-w);
+  background: var(--ink);
+  color: rgba(250,244,230,0.5);
+  padding: 2rem 3.5rem;
+  font-size: 0.82rem;
+}
+
+.site-footer a {
+  color: var(--coral-soft);
+  text-decoration: none;
+}
+
+/* ─── PRINT ─── */
+@media print {
+  .sidebar, .site-header { display: none; }
+  .main { margin-left: 0; margin-top: 0; }
+  .section-body { max-height: none !important; }
+  .section { break-inside: avoid; }
+  .hero { background: var(--ocean) !important; -webkit-print-color-adjust: exact; }
+  .site-footer { margin-left: 0; }
+  body { font-size: 11pt; }
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .sidebar { display: none; }
+  .main, .site-footer { margin-left: 0; }
+  .hero { padding: 2.5rem 1.5rem 2rem; }
+  .hero h2 { font-size: 1.8rem; }
+  .content { padding: 1.5rem; }
+  .part-divider { padding: 1.5rem 1.5rem 0.5rem; }
+  .section-content { padding-left: 1.5rem; }
+  .participants-grid { grid-template-columns: 1fr; }
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section {
+  animation: fadeUp 0.5s ease both;
+}
+
+.section:nth-child(2) { animation-delay: 0.05s; }
+.section:nth-child(3) { animation-delay: 0.1s; }
+.section:nth-child(4) { animation-delay: 0.15s; }
+.section:nth-child(5) { animation-delay: 0.2s; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <h1>Formation Intelligence Artificielle<span>Envergure · La Réunion</span></h1>
+  <div class="header-right">11 février 2026<br>Julien Talbot · Ergonomia</div>
+</header>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+  <div class="nav-group">
+    <div class="nav-label">Vue d'ensemble</div>
+    <a href="#synthese" data-target="synthese">Synthèse</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-label">Matinée · Fondamentaux</div>
+    <a href="#s1" data-target="s1">IA vs technologies classiques</a>
+    <a href="#s2" data-target="s2">Données et puissance de calcul</a>
+    <a href="#s3" data-target="s3">Fonctionnement des LLM</a>
+    <a href="#s4" data-target="s4">Entraînement des modèles</a>
+    <a href="#s5" data-target="s5">Biais et angles morts</a>
+    <a href="#s6" data-target="s6">Panorama des modèles</a>
+    <a href="#s7" data-target="s7">Gratuit vs payant</a>
+    <a href="#s8" data-target="s8">Confidentialité et RGPD</a>
+    <a href="#s9" data-target="s9">L'art du prompt</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-label">Après-midi · Cas pratiques</div>
+    <a href="#s10" data-target="s10">Présentations et diaporamas</a>
+    <a href="#s11" data-target="s11">Image et retouche</a>
+    <a href="#s12" data-target="s12">Vidéo et audio</a>
+    <a href="#s13" data-target="s13">NotebookLM</a>
+    <a href="#s14" data-target="s14">Veille et automatisation</a>
+    <a href="#s15" data-target="s15">Appels d'offres</a>
+    <a href="#s16" data-target="s16">Comptes-rendus</a>
+    <a href="#s17" data-target="s17">Agents IA</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-label">Suites</div>
+    <a href="#participants" data-target="participants">Profils participants</a>
+    <a href="#plan" data-target="plan">Plan d'action</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h2>Livrable de formation</h2>
+    <p class="subtitle">Intelligence artificielle appliquée — journée d'initiation et de mise en pratique</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <div class="meta-label">Date</div>
+        <div class="meta-value">11 février 2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Participants</div>
+        <div class="meta-value">5 collaborateurs</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Formateur</div>
+        <div class="meta-value">Julien Talbot</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Format</div>
+        <div class="meta-value">1 journée complète</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="content">
+
+<!-- SYNTHÈSE -->
+<div class="exec-summary" id="synthese">
+  <h3>Synthèse</h3>
+  <p>Formation d'une journée chez Envergure, à La Réunion. Cinq collaborateurs aux profils et niveaux très variés — de l'usage quasi nul à l'utilisation régulière de ChatGPT — ont parcouru les fondamentaux de l'IA le matin, puis exploré des cas pratiques l'après-midi. L'approche retenue part des usages individuels réels plutôt que d'un déploiement technologique descendant, conformément aux résultats du MIT sur les projets IA qui réussissent.</p>
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-num">5</div>
+      <div class="stat-label">Participants</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">17</div>
+      <div class="stat-label">Thèmes couverts</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">8+</div>
+      <div class="stat-label">Outils présentés</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1</div>
+      <div class="stat-label">Journée intense</div>
+    </div>
+  </div>
+  <p>Le fil directeur : l'IA comme assistant, pas comme remplacement. Chaque participant a identifié des cas d'usage concrets liés à son poste. La formation s'inscrit dans un plan d'accompagnement plus large, avec des ateliers collectifs et un coaching individuel à venir.</p>
+</div>
+
+<!-- ═══════════ MATINÉE ═══════════ -->
+<div class="part-divider" id="matin">
+  <h2>Matinée · Fondamentaux</h2>
+</div>
+
+<!-- S1: IA vs technologies classiques -->
+<div class="section" id="s1">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">01</div>
+    <h3>IA vs technologies classiques</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p>La distinction fondamentale entre une technologie classique et l'IA tient en un mot : <strong>généralisation</strong>. Un programme classique exécute des règles écrites à l'avance. Une IA apprend des comportements à partir de données.</p>
+      <div class="anecdote">
+        <div class="anecdote-label">Analogie de la formation</div>
+        <p>La souris dans le labyrinthe. Dans l'approche classique (déterministe), il faut coder chaque instruction : « si mur à droite, tourne à gauche ». Si le labyrinthe change de forme — murs arrondis, parcours circulaire — le programme casse. Dans l'approche machine learning, la souris est placée dans des millions de labyrinthes différents. À chaque traversée réussie, ce comportement est renforcé. À chaque échec, il est affaibli. Après suffisamment d'entraînement, elle se débrouille dans n'importe quelle configuration.</p>
+      </div>
+      <p>Cette capacité à généraliser se retrouve chez l'humain : on reconnaît une chaise qu'on n'a jamais vue parce qu'on a intégré le <em>concept</em> de chaise dès l'enfance. Avant l'IA, extraire le sentiment d'un texte (positif, négatif, humoristique) exigeait des programmes immenses, où chaque cas devait être prévu. Un simple « pas content » écrit « pas contant » pouvait passer à la trappe.</p>
+      <div class="takeaway">
+        <div class="takeaway-label">À retenir</div>
+        <p>L'IA ne suit pas des règles prédéfinies : elle a appris des patterns à partir de données massives. Sa force, c'est de s'adapter à des situations qu'elle n'a jamais rencontrées exactement — tant que quelque chose de similaire figurait dans ses données d'entraînement.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S2: Données et puissance de calcul -->
+<div class="section" id="s2">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">02</div>
+    <h3>Données et puissance de calcul</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p>Le concept de machine learning remonte aux années 1980. Ce qui a changé la donne, ce sont deux facteurs convergents : l'explosion des données et la puissance de calcul disponible.</p>
+      <p><strong>Les données</strong> — Internet, les réseaux sociaux, YouTube, la numérisation massive des bibliothèques, les mails, les forums : l'humanité a produit en quelques décennies un volume de texte, d'images et de sons suffisant pour entraîner des modèles capables de maîtriser le langage.</p>
+      <p><strong>Les GPU</strong> — Les cartes graphiques (Graphics Processing Units) traitent des calculs en parallèle, contrairement aux CPU qui travaillent en série. Conçues pour le jeu vidéo (générer des images à 60 ou 120 images par seconde), elles ont ensuite été détournées pour le minage de crypto-monnaies, puis pour l'entraînement de modèles d'IA. Nvidia, le fabricant dominant, est devenu l'une des entreprises les plus valorisées au monde.</p>
+      <div class="anecdote">
+        <div class="anecdote-label">Échange en formation</div>
+        <p>Laetitia a mentionné avoir changé un GPU sur son PC — ce qui a surpris l'ensemble du groupe. La discussion a rappelé que la frontière entre usage grand public et infrastructure IA est plus ténue qu'on ne le croit.</p>
+      </div>
+      <div class="takeaway">
+        <div class="takeaway-label">À retenir</div>
+        <p>La technologie IA n'est pas née hier. Ce qui a rendu les LLM possibles, c'est la conjonction entre des quantités astronomiques de données et la puissance brute des GPU. Sans l'un ou l'autre, les modèles actuels n'existeraient pas.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S3: Fonctionnement des LLM -->
+<div class="section" id="s3">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">03</div>
+    <h3>Comment fonctionnent les LLM</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p>Un Large Language Model (LLM) comme ChatGPT ou Claude génère du texte <strong>token par token</strong>, c'est-à-dire mot par mot (ou parfois sous-mot par sous-mot). À chaque étape, le modèle calcule une probabilité pour chaque mot possible et choisit le plus probable — ou un mot légèrement moins probable si le paramètre de « température » est élevé.</p>
+      <p><strong>Cohérence n'est pas vérité.</strong> Le modèle produit du texte qui « sonne juste » sans vérifier la véracité de ce qu'il écrit. S'il affirme qu'un événement a eu lieu en 1987, c'est parce que cette date est statistiquement plausible dans le contexte de la phrase, pas parce qu'il a consulté une base factuelle. D'où les « hallucinations » : des réponses formulées avec assurance mais factuellement fausses.</p>
+      <p><strong>La température</strong> contrôle le degré de créativité. À température basse, le modèle est prévisible et répétitif — il choisit toujours le mot le plus probable. À température haute, il prend des chemins moins attendus, ce qui produit des réponses plus originales mais aussi plus risquées en termes de fiabilité.</p>
+      <div class="takeaway">
+        <div class="takeaway-label">À retenir</div>
+        <p>Un LLM ne « comprend » pas au sens humain du terme : il prédit la suite la plus probable d'une séquence de mots. Relire et vérifier ses productions reste indispensable, surtout pour les données factuelles, les chiffres et les références.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S4: Entraînement des modèles -->
+<div class="section" id="s4">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">04</div>
+    <h3>Entraînement des modèles</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p>L'entraînement d'un LLM suit plusieurs étapes. D'abord, le <strong>scraping</strong> : des robots aspirent des quantités colossales de texte sur le web — articles, livres numérisés, forums, Wikipédia, code source. Ensuite, le <strong>nettoyage</strong> : retrait des contenus dupliqués, incohérents ou de mauvaise qualité.</p>
+      <p>Puis vient la phase d'entraînement proprement dite, où le modèle apprend à prédire le mot suivant sur des milliards de phrases. Le résultat brut est un modèle puissant mais « sauvage » : il peut générer du contenu inapproprié, dangereux ou faux sans aucun filtre.</p>
+      <p>La phase suivante — parfois appelée « lobotomisation » dans le jargon — consiste à aligner le modèle sur des valeurs humaines. Des équipes de <strong>red teaming</strong> tentent de le piéger, de le faire dérailler, de lui soutirer des contenus interdits. Chaque faille détectée est corrigée, et le modèle apprend à refuser certaines requêtes.</p>
+      <p>Cette course entre les fournisseurs (OpenAI, Anthropic, Google, xAI) est continue. La priorité va à la performance et à la vitesse de mise sur le marché, parfois au détriment de la sécurité — un point soulevé plusieurs fois pendant la formation.</p>
+    </div>
+  </div>
+</div>
+
+<!-- S5: Biais et angles morts -->
+<div class="section" id="s5">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">05</div>
+    <h3>Biais et angles morts</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p>Les modèles d'IA ne sont pas neutres. Ils héritent des biais présents dans leurs données d'entraînement, et les décisions de leurs créateurs influencent leurs comportements.</p>
+      <p><strong>L'affaire des Vikings et Gemini.</strong> Le modèle de Google, trop corrigé pour éviter les biais raciaux, refusait de montrer des Vikings à la peau claire dans ses images générées — un excès de correction qui a créé un nouveau biais, dans l'autre sens.</p>
+      <p><strong>David Meijer de Rothschild et Claude.</strong> L'aventurier-explorateur se plaignait d'être systématiquement confondu avec la famille de banquiers. Or Claude (Anthropic) avait reçu la consigne de ne pas parler de la famille Rothschild pour éviter les théories du complot. Résultat : l'IA se bloquait face à un homonyme parfaitement légitime. L'intérêt privé du développeur venait distordre la réalité.</p>
+      <p><strong>La sycophancy.</strong> Les modèles ont tendance à approuver l'utilisateur plutôt qu'à le contredire. Ils disent oui plus facilement qu'ils ne disent non, ce qui renforce le sentiment de fiabilité tout en affaiblissant la pensée critique de l'utilisateur — la préoccupation qu'exprimait Philippe dès le tour de table matinal.</p>
+      <div class="takeaway">
+        <div class="takeaway-label">À retenir</div>
+        <p>Derrière chaque modèle, il y a des choix humains — commerciaux, politiques, éthiques — qui influencent les réponses. Garder son esprit critique face à l'IA n'est pas un luxe : c'est une nécessité.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S6: Panorama des modèles -->
+<div class="section" id="s6">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">06</div>
+    <h3>Panorama des modèles</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p>Les principaux modèles présentés, avec leurs forces respectives :</p>
+      <p><span class="tool-tag">ChatGPT</span> <strong>OpenAI</strong> — Le généraliste par excellence. Répond à environ 80 % des usages courants. Mode agent, génération d'images (DALL-E), tâches planifiées, recherche approfondie. Version gratuite généreuse, version payante à ~20 €/mois.</p>
+      <p><span class="tool-tag alt">Claude</span> <strong>Anthropic</strong> — Particulièrement fort en rédaction et en analyse de documents longs. Style d'écriture plus soigné. Fenêtre de contexte intermédiaire.</p>
+      <p><span class="tool-tag">Gemini</span> <strong>Google</strong> — Connecté à l'écosystème Google (Gmail, Drive, YouTube). Bon en génération et retouche d'images via Imagen. Style de réponse plus direct, moins « empâté » que ChatGPT selon les observations de Mélodie.</p>
+      <p><span class="tool-tag alt">Grok</span> <strong>xAI (Elon Musk)</strong> — Connecté au réseau X (ex-Twitter). Fort en recherche d'informations d'actualité. Capacité de génération vidéo.</p>
+      <p><span class="tool-tag gold">NotebookLM</span> <strong>Google</strong> — Outil spécialisé pour travailler avec de grands volumes de documents. Fenêtre de contexte très large (centaines de pages). Génère des podcasts, quiz, flashcards, cartes mentales à partir de vos sources.</p>
+      <div class="takeaway">
+        <div class="takeaway-label">À retenir</div>
+        <p>Aucun modèle n'excelle partout. L'idée, c'est d'utiliser le bon outil au bon moment : ChatGPT pour l'analyse et la polyvalence, Claude pour la rédaction fine, Gemini pour les images, NotebookLM pour digérer de la documentation volumineuse.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S7: Gratuit vs payant -->
+<div class="section" id="s7">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">07</div>
+    <h3>Gratuit vs payant</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p>Tous les modèles majeurs proposent une version gratuite. Ces versions sont limitées en nombre de requêtes, en taille des pièces jointes acceptées, et parfois en accès aux modèles les plus puissants. Le passage au payant coûte environ 20 € par mois.</p>
+      <p>La recommandation formulée en formation : <strong>commencer par le gratuit, tester, et payer uniquement quand la limite devient un frein réel</strong>. Philippe a noté qu'il n'était « pas trop gêné » par les limites en usage texte, mais que la génération d'images le bloquait rapidement. Ce type de friction est un bon indicateur qu'un abonnement serait rentable.</p>
+      <p>La <strong>fenêtre de contexte</strong> — c'est-à-dire la quantité de texte que le modèle peut traiter d'un coup — varie selon les modèles et les versions. En gratuit, elle est souvent réduite. Pour traiter de longs documents (cahier des charges, rapport annuel), la version payante ou un outil comme NotebookLM (gratuit, avec une très grande fenêtre) sera préférable.</p>
+    </div>
+  </div>
+</div>
+
+<!-- S8: Confidentialité et RGPD -->
+<div class="section" id="s8">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">08</div>
+    <h3>Confidentialité et RGPD</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p>Quand vous envoyez un texte à ChatGPT, Claude ou Gemini, ce texte transite par les serveurs du fournisseur. Selon les conditions d'utilisation et la version (gratuite ou payante), ces données peuvent ou non être réutilisées pour entraîner les modèles.</p>
+      <div class="anecdote">
+        <div class="anecdote-label">Cas concret discuté</div>
+        <p>Le dispositif Plaud de Philippe : l'audio enregistré est envoyé aux serveurs de Plaud, puis traité par ChatGPT ou Claude. Deux transferts de données successifs. Pour une conférence publique, c'est anodin. Pour une réunion stratégique chez le comptable — Morgane a immédiatement relevé le problème — c'est plus délicat.</p>
+      </div>
+      <p>L'alternative existe : des modèles qui tournent <strong>en local</strong>, sur le PC, sans envoyer aucune donnée à l'extérieur. La retranscription audio, par exemple, peut être réalisée localement (le PC chauffe un peu, mais l'audio ne quitte jamais la machine).</p>
+      <p>Côté enregistrement en réunion, les pratiques évoluent. Chez Citeo, l'IA de compte-rendu Teams avait été bannie parce qu'elle mettait les collaborateurs mal à l'aise. La recommandation : demander le consentement, et si possible, utiliser des outils qui garantissent le traitement local des données.</p>
+      <p>À terme, des <strong>chartes d'usage de l'IA</strong> en entreprise se développeront — comme les chartes internet des années 2000. Envergure pourra s'en doter pour encadrer ces pratiques.</p>
+    </div>
+  </div>
+</div>
+
+<!-- S9: L'art du prompt -->
+<div class="section" id="s9">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">09</div>
+    <h3>L'art du prompt</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p>La qualité de la réponse dépend directement de la qualité de la demande. Un prompt efficace s'articule autour de trois composantes :</p>
+      <p><strong>Le rôle</strong> — Donner une identité au modèle. « Tu es un expert en rédaction de réponses aux appels d'offres dans le secteur de l'environnement à La Réunion. » Cela oriente le registre, le vocabulaire et le niveau de détail.</p>
+      <p><strong>La consigne</strong> — Dire précisément ce qu'on attend. « Rédige un résumé de 200 mots » est plus efficace que « Résume-moi ça ». Spécifier le format, la longueur, le ton, les contraintes.</p>
+      <p><strong>Le contexte</strong> — Fournir les informations nécessaires. Plus le contexte est riche et structuré, plus la réponse sera pertinente. Insérer des documents, des exemples, des précédents.</p>
+      <p>Les <strong>projets</strong> (dans ChatGPT) et les <strong>system prompts</strong> permettent de stocker ce contexte une fois pour toutes. Au lieu de réexpliquer à chaque conversation qui vous êtes et ce que fait Envergure, ces informations sont préchargées et le modèle s'en sert automatiquement. C'est ce que Mélodie recherchait : une IA qui « garde en mémoire » le contexte.</p>
+      <div class="anecdote">
+        <div class="anecdote-label">Observation de Morgane</div>
+        <p>Les premiers tests de posts LinkedIn pour Envergure donnaient des « généralités généreuses » — du contenu correct mais générique. En enrichissant le prompt avec le contexte métier, les résultats deviennent exploitables. L'investissement initial en configuration paie à chaque usage suivant.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ APRÈS-MIDI ═══════════ -->
+<div class="part-divider" id="apresmidi">
+  <h2>Après-midi · Cas pratiques</h2>
+</div>
+
+<!-- S10: Présentations -->
+<div class="section" id="s10">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">10</div>
+    <h3>Présentations et diaporamas</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p>Démonstration en direct de la génération d'un diaporama à partir d'une retranscription audio de formation. Deux approches testées :</p>
+      <p><span class="tool-tag alt">Claude</span> avec son système de « skills » : le modèle lit la retranscription, identifie les thèmes, structure un plan, et produit un fichier PowerPoint complet — avec mise en page, typographie, et contenu synthétisé. Le résultat est directement exploitable.</p>
+      <p><span class="tool-tag">ChatGPT</span> en version payante : même exercice, résultat comparable mais avec un style de mise en page différent. Les deux outils produisent un support utilisable, mais l'un peut mieux convenir selon le rendu visuel souhaité.</p>
+      <p>Des outils dédiés comme <strong>Gamma</strong> existent aussi pour la création de présentations assistée par IA, avec des templates plus élaborés.</p>
+      <div class="takeaway">
+        <div class="takeaway-label">À retenir</div>
+        <p>Générer un premier jet de diaporama prend quelques minutes. Le travail humain se concentre sur l'affinement : ajuster les formulations, vérifier les données, personnaliser le visuel. Le gain de temps est considérable sur la phase de structuration initiale.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S11: Image et retouche -->
+<div class="section" id="s11">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">11</div>
+    <h3>Image et retouche</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p>Trois niveaux d'usage abordés : la <strong>création</strong> d'images originales, la <strong>retouche</strong> de photos existantes, et la <strong>suppression</strong> d'éléments indésirables (watermarks, objets, personnes).</p>
+      <p><span class="tool-tag">Gemini + Imagen</span> s'est révélé le plus performant en version gratuite pour la retouche. Test concret : insérer Mélodie (absente ce jour-là de la photo de groupe) dans une photo existante. Gemini a produit un résultat convaincant ; ChatGPT gratuit n'y est pas parvenu.</p>
+      <p><span class="tool-tag">ChatGPT + DALL-E</span> reste performant en version payante pour la création d'images originales. La possibilité de générer des infographies est un atout méconnu — utile pour les mémoires techniques, les rapports, les posts LinkedIn.</p>
+      <div class="anecdote">
+        <div class="anecdote-label">Test en direct</div>
+        <p>Déborah a constaté que pour ses besoins en communication (visuels LinkedIn, retouche photo), Gemini gratuit donnait de meilleurs résultats que ChatGPT gratuit. Une découverte directement applicable dans son quotidien.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S12: Vidéo et audio -->
+<div class="section" id="s12">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">12</div>
+    <h3>Vidéo et audio</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p><strong>Vidéo</strong> — <span class="tool-tag alt">Grok</span> (xAI) a été présenté comme l'outil le plus accessible pour la génération de vidéos courtes. La qualité reste variable et l'illusion ne tient pas toujours sur les détails (mains, mouvements complexes), mais pour des contenus de communication courts, c'est utilisable. Déborah a noté que la vidéo restait moins convaincante que les photos générées.</p>
+      <p><strong>Audio et voix</strong> — <span class="tool-tag">ElevenLabs</span> permet de transformer du texte en parole avec une qualité remarquable : intonation naturelle, respirations, variations de rythme. Démonstration de <strong>clonage vocal</strong> : à partir de quelques minutes d'enregistrement, le service produit une voix synthétique quasi identique à l'originale. Applications : narration de podcasts, création de contenu audio, accessibilité.</p>
+      <p>Le <strong>mode vocal</strong> de ChatGPT a aussi été abordé : possibilité de converser à l'oral avec l'IA, utile en voiture pour réviser un sujet ou préparer une réunion. Philippe a trouvé l'idée séduisante pour ses trajets dans les embouteillages réunionnais.</p>
+    </div>
+  </div>
+</div>
+
+<!-- S13: NotebookLM -->
+<div class="section" id="s13">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">13</div>
+    <h3>NotebookLM</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p>NotebookLM de Google a fait forte impression. Son atout principal : une fenêtre de contexte immense. En formation, un livre entier de 196 pages y a été chargé sans perte de qualité dans les réponses — et l'outil peut absorber dix fois ce volume.</p>
+      <p>Les fonctionnalités clés :</p>
+      <p><strong>Podcast conversationnel</strong> — À partir de vos documents, NotebookLM génère un échange entre deux voix qui discutent du contenu, avec un ton naturel et pédagogique. Particulièrement utile pour s'imprégner d'un sujet dans un format facile à écouter (en voiture, en marchant).</p>
+      <p><strong>Quiz et flashcards</strong> — Pour tester sa compréhension d'un document. Utile en contexte de formation ou de montée en compétences technique.</p>
+      <p><strong>Cartes mentales</strong> — Visualisation structurée des idées contenues dans un document.</p>
+      <p><strong>Vidéo de synthèse</strong> — Génération d'un résumé visuel à partir des sources chargées.</p>
+      <div class="anecdote">
+        <div class="anecdote-label">Réaction en formation</div>
+        <p>Philippe : « C'est une révélation. » NotebookLM correspond directement à son besoin de digérer de la documentation volumineuse (rapports sectoriels, études) sans y consacrer des heures de lecture.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S14: Veille et automatisation -->
+<div class="section" id="s14">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">14</div>
+    <h3>Veille et automatisation</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p>ChatGPT (payant) propose un système de <strong>tâches planifiées</strong> : on rédige un prompt, on définit une fréquence (tous les lundis à 9h, tous les jours, etc.), et l'IA exécute cette conversation automatiquement, en envoyant le résultat par notification ou par mail.</p>
+      <p>Cas d'usage testés en formation :</p>
+      <p><strong>Veille sectorielle</strong> — Tous les lundis matin, l'IA consulte une liste de sites définis (publications environnement, législation déchets, actualités de La Réunion) et renvoie un récapitulatif des contenus récents. Morgane envisage de l'utiliser pour les appels d'offres.</p>
+      <p><strong>Veille métier pour la communication</strong> — Déborah pourrait programmer une veille sur les outils de community management, filtrée sur les outils gratuits, avec un résumé hebdomadaire.</p>
+      <p><strong>Limite importante :</strong> chaque exécution de la tâche est une conversation neuve. L'IA ne se souvient pas des résultats précédents. Il faut donc formuler le prompt de manière autonome (« liste les publications de moins d'une semaine ») plutôt que relative (« liste les nouveautés depuis la dernière fois »).</p>
+      <div class="takeaway">
+        <div class="takeaway-label">À retenir</div>
+        <p>La veille automatisée via ChatGPT tasks est probablement le gain le plus immédiat pour Envergure. Chaque collaborateur peut configurer sa propre veille thématique en quelques minutes. Le prompt s'affine au fil des semaines.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S15: Appels d'offres -->
+<div class="section" id="s15">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">15</div>
+    <h3>Appels d'offres</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p>L'IA peut intervenir à chaque étape de la réponse à un appel d'offres :</p>
+      <p><strong>Veille</strong> — Surveillance automatisée des plateformes (marchés publics, marchés en ligne, sites spécialisés), avec récapitulatif structuré selon vos critères.</p>
+      <p><strong>Go / No-go</strong> — En fournissant le DCE et le profil de votre entreprise (moyens techniques, humains, appels d'offres gagnés par le passé), l'IA estime la pertinence de candidater. Comme le notait Philippe : « C'est un peu dangereux » — mais cela aide à prioriser quand les ressources sont limitées.</p>
+      <p><strong>Analyse</strong> — Charger le CCTP, le règlement de consultation, et demander une analyse au regard de votre activité spécifique. Créer un <em>projet</em> dédié à cet appel d'offres, avec tous les documents du DCE plus le Kbis, les références, l'historique.</p>
+      <p><strong>Rédaction</strong> — Utiliser ChatGPT pour la structure et l'analyse, Claude pour la rédaction finale (meilleur style). Intégrer des infographies générées par IA dans le mémoire technique — un différenciant rare.</p>
+      <p><strong>Uniformisation</strong> — Quand plusieurs personnes rédigent, l'IA peut harmoniser le style en respectant une charte rédactionnelle (extraite des précédentes réponses, par exemple).</p>
+      <div class="anecdote">
+        <div class="anecdote-label">Exemple partagé</div>
+        <p>Julien accompagne un bureau d'études en fluide (INSET) sur ce processus. La différence entre un usage basique (« résume ce document ») et un usage structuré (projet dédié, contexte complet, multi-modèles) est déterminante. Tout le monde utilise l'IA ; l'avantage vient du niveau d'usage.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S16: Comptes-rendus -->
+<div class="section" id="s16">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">16</div>
+    <h3>Comptes-rendus de réunion</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p>Le cas d'usage le plus demandé en amont de la formation — par Laetitia et Morgane en particulier. Le processus en trois étapes : <strong>captation audio → retranscription → synthèse structurée</strong>.</p>
+      <p>La captation peut se faire via un dispositif dédié (Plaud), un téléphone en enregistrement, ou l'enregistrement intégré d'une visioconférence. La retranscription (speech-to-text) peut être réalisée en local sur le PC, sans envoi de données à l'extérieur.</p>
+      <p>Pour la synthèse, fournir un <strong>template de compte-rendu</strong> améliore fortement le résultat : structure type, liste des participants, date, contrainte de longueur. Le modèle reprend cette structure et y injecte le contenu.</p>
+      <div class="anecdote">
+        <div class="anecdote-label">Limite relevée par Morgane</div>
+        <p>L'IA a du mal avec l'humour et le second degré. Lors d'un compte-rendu automatisé, une blague sur un montant arrondi de 970 000 € a été prise au pied de la lettre. L'IA travaille sur du texte brut : les rires, les tons ironiques, les regards complices ne figurent pas dans la retranscription.</p>
+      </div>
+      <p>La question de <strong>l'archivage</strong> a été soulevée par Morgane : connecter ChatGPT à SharePoint ou OneDrive pour stocker automatiquement les comptes-rendus validés. C'est techniquement possible via les connecteurs, mais soulève des questions de souveraineté des données. La position de Morgane : conserver un lieu unique de stockage (Microsoft / SharePoint) et y déposer les livrables plutôt que de multiplier les espaces.</p>
+    </div>
+  </div>
+</div>
+
+<!-- S17: Agents IA -->
+<div class="section" id="s17">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number">17</div>
+    <h3>Agents IA</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+      <p>Démonstration du <strong>mode agent</strong> de ChatGPT : l'IA ouvre un navigateur sur une machine virtuelle et navigue sur le web comme un humain. Elle peut cliquer sur des liens, remplir des formulaires, ajouter des produits à un panier.</p>
+      <p>En test : accès au site du Nouvel Économiste pour récupérer un article sur l'IA en entreprise. L'agent a été bloqué par un CAPTCHA — Julien a repris la main, résolu le CAPTCHA, puis rendu le contrôle à l'IA. Ce partage humain-machine illustre l'état actuel de la technologie : puissant mais pas autonome.</p>
+      <p>Cas d'usage évoqués : faire ses courses en ligne (liste → site du drive → ajout au panier → l'humain paie), recherche d'informations sur des sites protégés, navigation automatisée. Certains sites bloquent activement l'accès aux IA (paywalls, robots.txt). Des partenariats existent entre fournisseurs d'IA et éditeurs, mais ils restent inégaux.</p>
+      <p>Au-delà de ChatGPT, Julien a mentionné des agents plus avancés qui tournent sur un PC local, connectés à Google Drive, WhatsApp, Telegram — un assistant personnel permanent avec lequel on converse par messagerie. Ce futur est proche, mais pas encore à portée d'une PME comme Envergure.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PROFILS PARTICIPANTS ═══════════ -->
+<div class="part-divider" id="participants">
+  <h2>Profils des participants</h2>
+</div>
+
+<div class="content" style="padding-top: 0;">
+  <p style="margin-bottom: 1.5rem; color: #555;">Fiches individuelles établies à partir des entretiens préparatoires et des échanges en formation.</p>
+
+  <div class="participants-grid">
+
+    <!-- Philippe -->
+    <div class="participant-card">
+      <div class="card-header">
+        <div class="card-avatar" style="background: var(--ocean);">P</div>
+        <div class="card-info">
+          <h4>Philippe</h4>
+          <div class="card-role">Président</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-section-title">Niveau initial</div>
+        <p>Usage ludique de ChatGPT (recettes, questions variées, analyse de photos). Utilise Plaud pour la prise de notes en réunion et conférence — son seul usage professionnel structuré.</p>
+        <div class="level-bar"><div class="fill" style="width: 30%; background: var(--coral);"></div></div>
+
+        <div class="card-section-title">Préoccupations</div>
+        <p>Perte d'esprit critique face à l'IA. Crainte de ne plus être capable de vérifier ce que la machine produit — comme avec la calculatrice pour les opérations complexes.</p>
+
+        <div class="card-section-title">Cas d'usage identifiés</div>
+        <p>NotebookLM pour la documentation volumineuse. Veille sectorielle automatisée (déchets, environnement). Appels d'offres (analyse, go/no-go). Mode vocal en voiture.</p>
+      </div>
+    </div>
+
+    <!-- Morgane -->
+    <div class="participant-card">
+      <div class="card-header">
+        <div class="card-avatar" style="background: var(--coral);">M</div>
+        <div class="card-info">
+          <h4>Morgane</h4>
+          <div class="card-role">Directrice Support</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-section-title">Niveau initial</div>
+        <p>Utilisatrice régulière de ChatGPT (prud'hommes, simulations RH, DUERP). En transition vers Copilot (licence Microsoft). A initié la démarche IA chez Envergure.</p>
+        <div class="level-bar"><div class="fill" style="width: 55%; background: var(--ocean);"></div></div>
+
+        <div class="card-section-title">Vision</div>
+        <p>Multiplier par 10 la capacité de production avec le même effectif, en préservant le taux de marge. Consciente que cela suppose un plan IA structuré et une montée en compétences collective.</p>
+
+        <div class="card-section-title">Cas d'usage identifiés</div>
+        <p>Automatisation RH (paie, congés, notes de frais). Comptes-rendus de réunion. Uniformisation rédactionnelle. Structuration de la veille appels d'offres. Archivage sur SharePoint.</p>
+      </div>
+    </div>
+
+    <!-- Laetitia -->
+    <div class="participant-card">
+      <div class="card-header">
+        <div class="card-avatar" style="background: var(--gold);">L</div>
+        <div class="card-info">
+          <h4>Laetitia</h4>
+          <div class="card-role">Directrice Projet Environnement</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-section-title">Niveau initial</div>
+        <p>Usage quasi inexistant (une fois par mois, pour reformuler une phrase). N'a pas souhaité « tâtonner » seule — d'où sa demande d'être formée avant d'expérimenter.</p>
+        <div class="level-bar"><div class="fill" style="width: 8%; background: var(--gold);"></div></div>
+
+        <div class="card-section-title">Approche</div>
+        <p>Pragmatique et méthodique. Préfère comprendre le fonctionnement avant de s'y mettre, comme avec Excel : elle sait que l'outil peut faire bien plus que des sommes et des moyennes, mais n'a pas le temps de découvrir seule.</p>
+
+        <div class="card-section-title">Cas d'usage identifiés</div>
+        <p>Comptes-rendus de réunion (priorité n°1). Tâches répétitives sans valeur ajoutée. Recherche d'information technique sur les conventions et réglementations environnementales.</p>
+      </div>
+    </div>
+
+    <!-- Déborah -->
+    <div class="participant-card">
+      <div class="card-header">
+        <div class="card-avatar" style="background: #7c6ea4;">D</div>
+        <div class="card-info">
+          <h4>Déborah</h4>
+          <div class="card-role">Assistante Communication / Admin</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-section-title">Niveau initial</div>
+        <p>Utilise ChatGPT gratuit pour des slogans, des idées de visuels, de la reformulation. Se décrit comme « basique de chez basique ». Manque de constance dans les résultats d'image générée.</p>
+        <div class="level-bar"><div class="fill" style="width: 25%; background: #7c6ea4;"></div></div>
+
+        <div class="card-section-title">Découvertes en formation</div>
+        <p>Gemini surpasse ChatGPT gratuit pour la retouche et la génération d'images. La vidéo générée reste en deçà de la photo. La veille automatisée pourrait nourrir le calendrier éditorial.</p>
+
+        <div class="card-section-title">Cas d'usage identifiés</div>
+        <p>Communication LinkedIn sur les thématiques environnementales. Visuels et retouche photo (Gemini). Calendrier éditorial assisté. Veille outils de community management.</p>
+      </div>
+    </div>
+
+    <!-- Mélodie -->
+    <div class="participant-card">
+      <div class="card-header">
+        <div class="card-avatar" style="background: #4a9e8e;">Mé</div>
+        <div class="card-info">
+          <h4>Mélodie</h4>
+          <div class="card-role">Chargée de mission Environnement (apprentie)</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-section-title">Niveau initial</div>
+        <p>Utilise ChatGPT (rédaction, devoirs) et Gemini (recherche technique) dans le cadre de son master RSE. A utilisé l'IA pour des réponses à appels à candidatures dans son précédent poste. 98 % de télétravail.</p>
+        <div class="level-bar"><div class="fill" style="width: 40%; background: #4a9e8e;"></div></div>
+
+        <div class="card-section-title">Observations</div>
+        <p>Gemini est plus direct dans ses réponses que ChatGPT, qui « met des formes ». La fiabilité de ChatGPT est parfois douteuse sur les informations techniques. Envie d'un outil qui centralise ses flux (calendrier, tâches, rappels).</p>
+
+        <div class="card-section-title">Cas d'usage identifiés</div>
+        <p>Organisation du travail en télétravail. Recherche d'information ciblée (conventions, réglementations). Rédaction de mails professionnels (garder son propre style). Projets/mémoire avec contexte persistant.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════ PLAN D'ACTION ═══════════ -->
+<div class="part-divider" id="plan">
+  <h2>Plan d'action</h2>
+</div>
+
+<div class="content" style="padding-top: 0;">
+  <p style="margin-bottom: 1.5rem; color: #555;">Prochaines étapes définies collectivement en fin de formation.</p>
+
+  <div class="action-plan">
+
+    <div class="action-step">
+      <div class="step-icon" style="background: var(--sand); color: var(--ocean);">🎯</div>
+      <div>
+        <h4>Premier projet IA individuel</h4>
+        <p>Chaque participant identifie une tâche concrète de son quotidien à traiter avec l'IA. Se caler des créneaux dédiés d'exploration (Philippe : 3h sur NotebookLM le jeudi suivant). Tester les versions gratuites. Documenter ce qui fonctionne et ce qui bloque.</p>
+      </div>
+    </div>
+
+    <div class="action-step">
+      <div class="step-icon" style="background: rgba(231,111,81,0.1); color: var(--coral);">👥</div>
+      <div>
+        <h4>Atelier collectif pratique</h4>
+        <p>Demi-journée à planifier (courant mars). Travail approfondi sur les cas d'usage identifiés par chacun. Format atelier : manipulation directe des outils, itération en temps réel, partage de découvertes.</p>
+      </div>
+    </div>
+
+    <div class="action-step">
+      <div class="step-icon" style="background: rgba(212,165,116,0.1); color: var(--gold);">🔄</div>
+      <div>
+        <h4>Points réguliers en équipe</h4>
+        <p>Intégrer un temps « IA » dans les réunions existantes. Chacun partage ce qu'il a testé, ce qu'il a trouvé, où il est bloqué. Créer une dynamique collective pour éviter le retour au quotidien sans IA. Morgane se positionne comme animatrice interne de cette montée en compétences.</p>
+      </div>
+    </div>
+
+    <div class="action-step">
+      <div class="step-icon" style="background: rgba(15,76,92,0.08); color: var(--ocean);">📞</div>
+      <div>
+        <h4>Accompagnement individuel</h4>
+        <p>Sessions de coaching avec Julien, à la demande. Chaque collaborateur peut solliciter un temps d'échange pour débloquer un cas d'usage, approfondir un outil, ou structurer un projet IA plus ambitieux.</p>
+      </div>
+    </div>
+
+    <div class="action-step">
+      <div class="step-icon" style="background: rgba(124,110,164,0.1); color: #7c6ea4;">📋</div>
+      <div>
+        <h4>Charte d'usage IA (à construire)</h4>
+        <p>Formaliser les règles internes : quelles données peut-on soumettre à l'IA ? Quel consentement pour l'enregistrement en réunion ? Quels outils utiliser pour les données sensibles (modèles locaux) ? Un cadre nécessaire pour avancer sereinement.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- /content -->
+</div><!-- /main -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>Livrable de formation · Envergure · 11 février 2026</p>
+  <p>Formateur : Julien Talbot · <a href="mailto:julien.talbot@ergonomia.re">julien.talbot@ergonomia.re</a></p>
+  <p style="margin-top: 0.5rem; opacity: 0.6;">Ce document a été généré à partir de la retranscription audio de la formation et des entretiens préparatoires individuels.</p>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+// Toggle sections
+function toggleSection(header) {
+  const section = header.parentElement;
+  section.classList.toggle('open');
+}
+
+// Open first section by default
+document.addEventListener('DOMContentLoaded', () => {
+  const first = document.querySelector('.section');
+  if (first) first.classList.add('open');
+
+  // Scroll spy for sidebar
+  const links = document.querySelectorAll('.sidebar a[data-target]');
+  const targets = {};
+  links.forEach(link => {
+    const id = link.getAttribute('data-target');
+    const el = document.getElementById(id);
+    if (el) targets[id] = { el, link };
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const id = entry.target.id;
+        if (targets[id]) targets[id].link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-100px 0px -60% 0px', threshold: 0 });
+
+  Object.values(targets).forEach(t => observer.observe(t.el));
+
+  // Animate level bars on scroll
+  const bars = document.querySelectorAll('.level-bar .fill');
+  const barObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.width = entry.target.style.width;
+      }
+    });
+  }, { threshold: 0.5 });
+  bars.forEach(bar => barObserver.observe(bar));
+});
+</script>
+</body>
+</html>
