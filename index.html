@@ -489,7 +489,8 @@ a { color:var(--ocean); text-underline-offset:3px; text-decoration-thickness:1px
     <a href="#suivi" data-target="suivi">Le fil de l'accompagnement</a>
     <a href="#sess-0313" data-target="sess-0313">13 mars · Appel d'offres</a>
     <a href="#sess-0615" data-target="sess-0615">15 juin · CRM dans Cowork</a>
-    <a href="#prepa-demain" data-target="prepa-demain">Prépa · session de demain</a>
+    <a href="#sess-0616" data-target="sess-0616">16 juin · Plugin, audio → CRM</a>
+    <a href="#suite" data-target="suite">Suite · chantiers ouverts</a>
   </div>
 </nav>
 
@@ -509,7 +510,7 @@ a { color:var(--ocean); text-underline-offset:3px; text-decoration-thickness:1px
       </div>
       <div class="meta-item">
         <div class="meta-label">Sessions de suivi</div>
-        <div class="meta-value">3 tenues</div>
+        <div class="meta-value">4 tenues</div>
       </div>
       <div class="meta-item">
         <div class="meta-label">Équipe</div>
@@ -547,7 +548,7 @@ a { color:var(--ocean); text-underline-offset:3px; text-decoration-thickness:1px
       <div class="stat-label">Thèmes en formation</div>
     </div>
     <div class="stat">
-      <div class="stat-num">3</div>
+      <div class="stat-num">4</div>
       <div class="stat-label">Sessions de suivi</div>
     </div>
     <div class="stat">
@@ -1109,9 +1110,9 @@ a { color:var(--ocean); text-underline-offset:3px; text-decoration-thickness:1px
     <h3>Le fil de l'accompagnement</h3>
     <p>La journée du 11 février a posé les fondamentaux. Depuis, l'accompagnement se poursuit en <strong>sessions courtes et ciblées</strong>, branchées directement sur les projets réels d'Envergure. On ne travaille plus l'IA « en général » : à chaque rendez-vous, un chantier concret avance, et chacun monte en compétence sur ses propres dossiers — la <em>formation-action</em>.</p>
     <div class="stats-row">
-      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Sessions tenues</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Sessions tenues</div></div>
       <div class="stat"><div class="stat-num">CRM</div><div class="stat-label">Chantier en cours</div></div>
-      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Chantiers à venir</div></div>
+      <div class="stat"><div class="stat-num">Veille</div><div class="stat-label">Prochain chantier</div></div>
       <div class="stat"><div class="stat-num">Itératif</div><div class="stat-label">Méthode</div></div>
     </div>
     <p>Le principe de fond reste le même qu'en méthodologie logicielle : faire tourner d'abord la chaîne complète de bout en bout — quitte à utiliser des outils « du marché » — puis optimiser brique par brique (passage en local, choix des modèles, frugalité). On stabilise, ensuite on raffine.</p>
@@ -1131,10 +1132,15 @@ a { color:var(--ocean); text-underline-offset:3px; text-decoration-thickness:1px
         <div class="tl-title">CRM dans Cowork · Morgane &amp; Déborah</div>
         <div class="tl-desc">Restructurer le CRM, créer fiche contact + journal d'échange, cadrer le partage.</div>
       </div>
+      <div class="tl-item">
+        <div class="tl-date">16 juin 2026</div>
+        <div class="tl-title">Plugin Chrome, audio → CRM · Déborah</div>
+        <div class="tl-desc">Piloter le navigateur, transcrire un rdv et mettre à jour le CRM en direct, amorcer la veille.</div>
+      </div>
       <div class="tl-item future">
-        <div class="tl-date">Session de demain</div>
-        <div class="tl-title">Partage &amp; notion de projet</div>
-        <div class="tl-desc">Rendre le CRM réellement collaboratif entre Morgane et Déborah.</div>
+        <div class="tl-date">À suivre</div>
+        <div class="tl-title">Veille &amp; contribution de l'équipe</div>
+        <div class="tl-desc">Automatiser la veille LinkedIn/web, ouvrir le CRM à Laetitia et Philippe, traiter le RGPD.</div>
       </div>
     </div>
   </div>
@@ -1202,67 +1208,118 @@ a { color:var(--ocean); text-underline-offset:3px; text-decoration-thickness:1px
   </div>
 </div>
 
-<!-- ═══════════ PRÉPA DEMAIN ═══════════ -->
-<div class="part-divider" id="prepa-demain">
-  <span class="part-eyebrow">Prochaine séance · 16 juin</span>
-  <h2>Prépa · Session de demain</h2>
+<!-- SESSION 16 JUIN -->
+<div class="section" id="sess-0616">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-number" style="background: var(--coral);">06/16</div>
+    <h3>16 juin · Piloter le navigateur, transcrire un rdv, mettre à jour le CRM en direct (avec Déborah)</h3>
+    <div class="section-toggle"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 5L7 9L11 5" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+
+      <div class="card-section-title">Reprise du chantier</div>
+      <p>Suite directe de la veille. Déborah a fait tourner sa part : la <span class="tool-tag gold">V3</span> du CRM existe, avec les colonnes et listes revues, la fiche contact et le journal d'échange, et les contacts récents reportés depuis la V2 — le fichier vit désormais dans <strong>Teams</strong>. Deux consignes de Morgane restaient : synchroniser la V3 avec la V2 (fait) et faire déposer le fichier par Claude sur le canal Teams (bloqué). Le blocage : impossible de connecter Microsoft depuis Safari, et Déborah a fini par faire la manipulation elle-même, tard, plutôt que d'insister.</p>
+      <div class="takeaway">
+        <div class="takeaway-label">Le réflexe à ancrer : « trouve-moi une autre solution »</div>
+        <p style="margin:0;">Quand l'IA dit « je ne peux pas », ce n'est pas la fin — c'est le début. On lui répond : <em>débrouille-toi, propose-moi trois autres solutions, fais-moi un tableau comparatif</em>. On lui envoie une capture d'écran de ce qui coince. C'est exactement le réflexe qu'on aurait avec un stagiaire qu'on paie : on ne reprend pas la tâche à la main, on le pousse à aller au bout. <strong>Le meilleur spécialiste de l'IA, c'est l'IA elle-même.</strong> (Au passage : il existe bien un connecteur MCP Microsoft Teams — à activer côté admin.)</p>
+      </div>
+
+      <div class="card-section-title">Installer le plugin Chrome — et lui laisser la souris</div>
+      <p>Exercice <em>formation-action</em> : Déborah installe elle-même l'extension Chrome de Claude (épingler, autoriser les actions), parce que c'est elle qui devra savoir le refaire. Une fois connecté, le plugin permet à Claude de <strong>piloter le navigateur et le poste</strong> : il prend la main sur le curseur, ouvre office.com, se balade dans OneDrive, fait défiler une page, prend des captures d'écran pour se repérer. Cowork n'a pas de connecteur Microsoft natif (hormis Outlook) — mais via Chrome, l'IA manipule toute la suite 365 et n'importe quel outil accessible en ligne.</p>
+      <div class="anecdote">
+        <div class="anecdote-label">Le moment qui surprend</div>
+        <p style="margin:0;">Voir la souris bouger toute seule, « ça fait peur » la première fois. En réalité, le logiciel a toujours travaillé sans nous (synchronisation, versions de fichiers…) — c'est juste que c'était invisible. Le garde-fou n'est pas de tout reprendre à la main, mais de <strong>dire précisément ce qu'on veut</strong> et de ne pas donner l'accès complet au poste pendant qu'on fait autre chose de sensible.</p>
+      </div>
+
+      <div class="card-section-title">Choisir le modèle et l'effort de réflexion</div>
+      <p>Deux réglages à connaître : le <strong>modèle</strong> (du plus gros au plus petit) et le <strong>niveau de réflexion</strong> (l'effort de raisonnement). Par défaut on est sur un petit modèle, effort faible — c'est l'intérêt du fournisseur, pas forcément le vôtre. On vérifie son budget de jetons (session de ~5 h, quota hebdo qui se réinitialise le vendredi à 10 h) ; un mardi avec de la marge, on choisit un modèle <strong>intelligent</strong> et un effort <strong>intermédiaire</strong>, adaptés à l'enjeu. Et on dicte à la voix plutôt que de taper : c'est plus rapide pour poser un contexte.</p>
+
+      <div class="card-section-title">Le cœur de séance : audio → CRM, en direct</div>
+      <p>Cas réel : Julien a un compte rendu d'un rdv terrain de la veille (Olivier). Objectif — que Claude <strong>transcrive l'audio et mette à jour le journal d'échange</strong> du contact dans la V3. Claude monte une liste de tâches (première étape : transcrire), écrit du code, et tente d'installer <span class="tool-tag">Whisper</span> — le modèle de transcription open-source d'OpenAI, gratuit, qui tourne en local (donc même hors-ligne). Le téléchargement coince (sources bloquées), il réessaie autrement. En secours, on lui donne directement une retranscription au format texte (issue de Fireflies) : il l'analyse, écrit dans le fichier (date, compte rendu, statut « en cours d'évaluation »), puis <strong>vérifie que rien n'a cassé</strong>. Une dizaine de minutes pour une première fois.</p>
+      <div class="takeaway">
+        <div class="takeaway-label">La vraie compétence : orienter, pas maîtriser</div>
+        <p style="margin:0;">Inutile de comprendre Whisper ou Python en profondeur. La méta-compétence, c'est de savoir <strong>orienter l'IA</strong> : quel fichier, quel dossier, à quel moment, avec quel contexte. On garde juste « un brin de curiosité » — demander en une phrase ce qu'est Whisper, refermer, et savoir que demain, avec 15 enregistrements d'une journée réseau, on saura quoi lui dire.</p>
+      </div>
+      <div class="anecdote">
+        <div class="anecdote-label">Le piège du fichier partagé</div>
+        <p style="margin:0;">Sur OneDrive/Teams, beaucoup de fichiers sont des <strong>raccourcis non synchronisés</strong>, pas le fichier lui-même. Si l'IA bute, c'est souvent ça : il faut <em>forcer la synchronisation</em>. Un écueil à anticiper avant d'ouvrir l'accès aux autres, sinon quelqu'un s'arrache les cheveux un quart d'heure et décroche.</p>
+      </div>
+
+      <div class="card-section-title">La revue des contacts, version « un seul PC »</div>
+      <p>Idée pour les comités à venir : plus d'intermédiaires. On ouvre Cowork sur un MacBook (bon micro), avec le prompt déjà tapé et le bon fichier CRM ouvert ; on appuie sur le micro au début de la réunion, on passe les contacts en revue à voix haute, et à la fin on valide — la retranscription est déjà dans Claude, qui met le CRM à jour. <strong>Redondance recommandée</strong> : enregistrer aussi un audio brut (dictaphone) en secours, au cas où la transcription en direct échoue.</p>
+      <p>Pour préparer cette revue, il suffit de sortir la liste des contacts <strong>sans décision de qualification</strong>. Le CRM porte un champ « décision de qualification » (qualifié / disqualifié / en cours d'évaluation / rien), plus potentiel commercial, priorité et responsable de suivi. On peut même se passer d'une liste générée : filtrer la colonne dans Excel suffit. Pour chaque contact nommé, on tranche — qualifie, disqualifie ou laisse en évaluation — et on affecte un responsable.</p>
+
+      <div class="card-section-title">Amorcer la veille (prochain gros chantier)</div>
+      <p>On rejoue la même structure que le CRM : un fichier de veille partagé, alimenté par Claude qui va chercher la matière lui-même (web + LinkedIn via le navigateur). Démonstration sur LinkedIn, et une leçon nette sur la <strong>précision du prompt</strong> : une première recherche est ressortie « nationale » faute d'avoir précisé « à La Réunion » et « publie sur LinkedIn ». La bonne stratégie laisse l'IA croiser Google puis LinkedIn à partir de critères explicites.</p>
+      <div class="anecdote">
+        <div class="anecdote-label">Une automatisation, ça se rode</div>
+        <p style="margin:0;">Une tâche programmée (lundi matin) a été créée en direct — l'IA s'auto-formule son prompt, parfois en anglais. Au test, elle a suivi de <strong>mauvaises pages</strong>, inactives : preuve qu'une automatisation se cadre et se corrige avant d'être lâchée. Piste forte : croiser la veille avec le CRM (la source unique de vérité) — par exemple liker chaque lundi deux posts de contacts qualifiés pour rester présent dans les esprits, sans le risque d'un message automatisé.</p>
+      </div>
+
+      <div class="card-section-title">Le cap de fond</div>
+      <p>Le mot d'ordre : <strong>pratiquer jusqu'à la limite du quota</strong>, tous les jours. Premier réflexe — ne pas faire soi-même, déléguer d'abord. Mais aussi savoir s'arrêter : comme un réseau social, l'IA pousse toujours « pour aller plus loin » afin de consommer des jetons ; il faut la méta-compétence de dire « c'est bon, mon objectif est atteint ». La compétence qui compte se déplace vers la <strong>conception</strong> : définir précisément l'objectif et le contexte, pas exécuter. On devient une sorte de manager qui « drive » un assistant — presque une compétence de dirigeant. Et on vise d'abord l'<strong>assistance</strong> (70 % de temps gagné sur 100 % des tâches) avant l'automatisation, qui viendra plus tard, une fois les process stabilisés.</p>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SUITE · CHANTIERS OUVERTS ═══════════ -->
+<div class="part-divider" id="suite">
+  <span class="part-eyebrow">Après le 16 juin</span>
+  <h2>Suite · chantiers ouverts</h2>
 </div>
 
 <div class="content" style="padding-top: 0;">
-  <p style="margin-bottom: 1.5rem; color: #555;">Objectif fixé par Morgane : un zoom sur la <strong>notion de projet</strong> dans Cowork, et avancer concrètement sur le <strong>partage Morgane ↔ Déborah</strong>. Déroulé proposé et chantiers à dérouler dans l'ordre.</p>
-
-  <div class="takeaway" style="margin-bottom: 1.5rem;">
-    <div class="takeaway-label">Déroulé proposé (≈ 1 h)</div>
-    <p style="margin:0;">1. Mémo express : la notion de projet/dossier dans Cowork (10 min) · 2. Mettre le CRM dans un espace partagé et y donner accès (15 min) · 3. Adapter l'automatisation de veille au nouveau chemin du fichier (10 min) · 4. Fiabiliser fiche contact + journal, verrouiller la fiche (15 min) · 5. Cadrer la décision Excel / Microsoft List et les prochaines étapes (10 min).</p>
-  </div>
+  <p style="margin-bottom: 1.5rem; color: #555;">Le CRM tient désormais la route : structure, fiche contact, journal d'échange, et une première mise à jour réussie par la voix. Julien part en congés vendredi ; voici les chantiers ouverts pour la suite, dans l'ordre où ils mûriront.</p>
 
   <div class="action-plan">
 
     <div class="action-step">
-      <div class="step-icon" style="background: rgba(231,111,81,0.1); color: var(--coral);">🔗</div>
+      <div class="step-icon" style="background: rgba(231,111,81,0.1); color: var(--coral);">🗳️</div>
       <div>
-        <h4>1 · Partage Morgane ↔ Déborah</h4>
-        <p>Homogénéiser tout de suite le travail : déposer la version de Déborah et celle de Morgane dans un <strong>même dossier Cowork</strong> et demander la fusion vers la V3. Puis déplacer le CRM de OneDrive vers un <strong>espace partagé synchronisé (SharePoint)</strong> accessible à tous, et vérifier que Déborah y a bien accès. La synchro locale règle l'essentiel des conflits : chacun travaille sur sa copie synchronisée, Ctrl+S met à jour la version commune. Tester avant de généraliser.</p>
+        <h4>1 · Roder la revue des contacts</h4>
+        <p>Tester pour de vrai le format « un seul PC » : Cowork ouvert, prompt pré-tapé, bon fichier CRM, micro lancé, et on passe les contacts <em>sans décision de qualification</em> en revue à voix haute. À la fin, l'IA met à jour les statuts (qualifié / disqualifié / en évaluation), le potentiel et le responsable de suivi. Garder un <strong>audio brut en secours</strong> les premières fois. On stabilise sur un, deux, trois contacts avant de généraliser.</p>
       </div>
     </div>
 
     <div class="action-step">
-      <div class="step-icon" style="background: var(--sand); color: var(--ocean);">📁</div>
+      <div class="step-icon" style="background: var(--sand); color: var(--ocean);">🤝</div>
       <div>
-        <h4>2 · La notion de projet dans Cowork</h4>
-        <p>Le zoom demandé par Morgane. Montrer qu'un projet = <strong>un dossier dédié + un contexte documenté</strong> (instructions, fichiers de référence). Bien documenté, il évite de tout re-prompter à chaque fois : l'IA « connaît déjà » Envergure et ses conventions. À faire vivre côté Déborah aussi, pour qu'elle parte sur les mêmes rails que Morgane.</p>
+        <h4>2 · Ouvrir la contribution à l'équipe</h4>
+        <p>Permettre à Laetitia et Philippe d'alimenter le CRM : un Cowork avec <strong>deux dossiers</strong> — en entrée leurs contacts dans n'importe quel format (Excel, doc, même des papiers scannés via OCR), en sortie le CRM partagé. Et une <strong>revue orale hebdomadaire</strong> des nouveaux contacts, pour recueillir l'avis terrain de chacun (« lui je le connais », « attention, concurrence »).</p>
       </div>
     </div>
 
     <div class="action-step">
-      <div class="step-icon" style="background: rgba(212,165,116,0.1); color: var(--gold);">⚙️</div>
+      <div class="step-icon" style="background: rgba(212,165,116,0.1); color: var(--gold);">📡</div>
       <div>
-        <h4>3 · Réaligner l'automatisation de veille</h4>
-        <p>L'automatisation programmée qui scrute l'inbox et met à jour le CRM pointe vers l'ancien emplacement. Une fois le fichier déplacé dans l'espace partagé, <strong>mettre à jour le chemin dans les instructions de la tâche</strong> pour qu'elle continue de tourner sans rien casser.</p>
+        <h4>3 · Automatiser la veille (chantier de juillet)</h4>
+        <p>Dupliquer la structure du CRM : un <strong>fichier de veille partagé</strong> alimenté par Claude (LinkedIn + sites institutionnels), mis à jour tôt le lundi matin pour que chacun fasse sa revue d'actualité et poste. Cibler avec des critères explicites (acteurs influents <em>à La Réunion</em>, actifs sur LinkedIn), rôder les tâches programmées avant de les lâcher, et croiser avec le CRM comme source unique de vérité.</p>
       </div>
     </div>
 
     <div class="action-step">
-      <div class="step-icon" style="background: rgba(15,76,92,0.08); color: var(--ocean);">🗂️</div>
+      <div class="step-icon" style="background: rgba(15,76,92,0.08); color: var(--ocean);">📧</div>
       <div>
-        <h4>4 · Fiabiliser fiche contact + journal d'échange</h4>
-        <p>Stabiliser la logique <em>porte d'entrée unique</em> : on saisit par le journal, la fiche se met à jour. Décider ensemble de ce qui entre dans la fiche (démarrer minimal, enrichir au fil de l'usage). Sécuriser : <strong>verrouiller la fiche contact</strong> contre les saisies accidentelles, ajouter un mode d'emploi en 3 étapes en tête de chaque onglet, et une alerte si un échange concerne un contact absent de la base.</p>
+        <h4>4 · Traiter le RGPD</h4>
+        <p>Une fois les contacts dans la base, leur envoyer un <strong>email d'information</strong> (présence dans le fichier, droit de désinscription). Prévoir un workflow qui repère chaque semaine les contacts pas encore informés et déclenche l'envoi — tâche fastidieuse, donc bonne candidate à l'automatisation.</p>
       </div>
     </div>
 
     <div class="action-step">
-      <div class="step-icon" style="background: rgba(124,110,164,0.1); color: #7c6ea4;">⚖️</div>
+      <div class="step-icon" style="background: rgba(124,110,164,0.1); color: #7c6ea4;">📊</div>
       <div>
-        <h4>5 · Cadrer Microsoft List vs Excel</h4>
-        <p>Trancher l'étape suivante, sans la précipiter. List apporte des fiches de saisie stables et l'intégration Teams, mais <strong>pas de connecteur MCP</strong> → l'IA y accède via Cowork local + synchro ou via Chrome (expérimental). Recommandation : valider la structure en local sur Excel maintenant, préparer un import propre vers List ensuite. À explorer : Copilot Studio et l'IA intégrée à la suite Microsoft. La migration restera simple — on reste sur un tableau.</p>
+        <h4>5 · Tableaux de bord &amp; IA locale</h4>
+        <p>Finaliser les <strong>tableaux de bord de pilotage</strong> (deuxième objectif avant les congés) en complétant leurs circuits d'alimentation, assistés par l'IA. Et garder en ligne de mire l'<strong>IA locale</strong> : deux déclencheurs possibles — des postes pas assez puissants (qui pousseront de toute façon vers une structure réseau) et la confidentialité des données personnelles. À explorer le moment venu, sans précipitation.</p>
       </div>
     </div>
 
   </div>
 
   <div class="anecdote" style="margin-top: 1.5rem;">
-    <div class="anecdote-label">Mémo prompt à laisser à Déborah</div>
-    <p style="margin:0;">Clarifier l'objectif d'abord · dicter à la voix · guillemets pour les catégories · commencer petit, itérer · demander une étude de faisabilité (« ne modifie rien, réponds-moi seulement ») avant toute action irréversible · vérifier la langue de la dictée · adapter le modèle à l'enjeu.</p>
+    <div class="anecdote-label">Les réflexes à garder</div>
+    <p style="margin:0;">« Trouve-moi une autre solution » plutôt que reprendre à la main · dicter à la voix · choisir le bon modèle et le bon effort selon l'enjeu · vérifier la langue de la dictée · forcer la synchro des fichiers partagés · dire <em>précisément</em> ce qu'on veut quand on donne l'accès au poste · pratiquer chaque jour… et savoir s'arrêter une fois l'objectif atteint.</p>
   </div>
 </div>
 
@@ -1272,7 +1329,7 @@ a { color:var(--ocean); text-underline-offset:3px; text-decoration-thickness:1px
 <!-- FOOTER -->
 <footer class="site-footer">
   <p>Livrable de formation &amp; accompagnement · Envergure · La Réunion</p>
-  <p>Formation : 11 février 2026 · Sessions de suivi : 13 mars, 15 juin 2026 · mis à jour le 15 juin 2026</p>
+  <p>Formation : 11 février 2026 · Sessions de suivi : 13 mars, 15 juin, 16 juin 2026 · mis à jour le 16 juin 2026</p>
   <p>Julien Talbot · <a href="mailto:julien.talbot@ergonomia.re">julien.talbot@ergonomia.re</a></p>
   <p style="margin-top: 0.5rem; opacity: 0.6;">Document vivant, généré à partir des retranscriptions audio des sessions et des entretiens préparatoires individuels.</p>
 </footer>
